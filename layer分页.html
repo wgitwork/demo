@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="staic/layui/css/layui.css" />
+		<style type="text/css">
+			#test {
+				width: 500px;
+				height: auto;
+				background: #fff;
+				padding-left: 50px;
+			}
+			
+			.testList {
+				width: 500px;
+				height: 50px;
+				background: #ccc;
+				padding-left: 50px;
+				line-height:50px;
+				margin-bottom:15px;
+			}
+			#page{
+				width:800px;
+				background:#fff;
+				padding-left:50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="test">
+
+		</div>
+		<div id="page">
+
+		</div>
+	</body>
+
+</html>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="staic/layui/layui.all.js"></script>
+<script>
+	showList();
+
+	function showList() {
+		var testHTML="";
+		for(var i = 0; i < 134; i++) {
+			testHTML += '<div class="testList">' + (i + 1) + '</div>';
+		}
+		$("#test").append(testHTML);
+		var lists = $('.testList').length;
+		var pages = Math.ceil(lists / nums); //得到总页数
+		var nums=10;//每页出现的数量
+		var thisDate = function(curr) {
+			var str = '',
+				last = curr * nums - 1;
+			last = last >= lists ? (lists - 1) : last;
+			for(var j = (curr * nums - nums); j <= last; j++) {
+				str += '<div class="testList">' + (j + 1) + '</div>';
+			}
+			return str;
+		};
+		//执行分页效果
+		layui.use('laypage', function() {
+			var laypage = layui.laypage;
+
+			//执行一个laypage实例
+			laypage.render({
+				elem: 'page', //注意，这里的 page 是 ID，不用加 # 号
+				count: lists, //数据总数，从服务端得到
+				curr: 1,//起始页
+				first: '首页',
+				last: '尾页',
+				groups: 3,  //连续出现的页码个数
+				layout: ['count', 'prev', 'page', 'next', 'skip'],
+				limit: nums,//每页显示条数
+				jump: function(obj, first) {  //切换分页执行的回调函数
+					console.log(obj.curr);
+					$("#test").html(thisDate(obj.curr));
+				}
+			});
+		});
+	}
+</script>

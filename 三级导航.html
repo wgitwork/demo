@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var menuJson = [{
+				"title": "主页",
+				"url": "#",
+				"icon": "fa fa-home"
+			},
+			{
+				"title": "会员管理",
+				"url": "#",
+				"icon": "fa fa-list",
+				"children": [{
+					"title": "会员列表",
+					"url": "vipShow.html",
+					"icon": "2222",
+				}, {
+					"title": "模块接入",
+					"url": "file_manager.html",
+					"icon": "2222",
+				}, {
+					"title": "jqGrid",
+					"url": "table_jqgrid.html",
+					"icon": "2222",
+				}, {
+					"title": "Foo Tables",
+					"url": "table_foo_table.html",
+					"icon": "2222",
+				}]
+			}, {
+				"title": "系统设置", //一级导航名称
+				"url":"#", //一级导航链接 
+				"icon":"fa fa-cog", //一级导航图标 
+				"children":[ //一级导航子级 
+				{ 
+					"title":"导航管理", //二级导航名称
+					"url":"", //二级导航链接 
+					"icon":"2222", //二级导航图标 
+					"children":[ //二级导航子级 
+					{ 
+						"title":"导航列表", //三级导航名称 
+						"url":"nav/show.html", //三级导航链接 
+						"icon":"333", //三级导航子级 
+						} 
+					] 
+				},{
+					"title":"模块管理", 
+					"url":"", 
+					"icon":"2222", 
+					"children":[
+					{
+						"title":"模块列表", 
+						"url":"module/show.html", 
+						"icon":"333", 
+					} 
+					] 
+				}, 
+				] 
+			} 
+	]
+</script>

@@ -1,0 +1,63 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Microsoft YaHei";
+	color: #000;
+}
+
+html {
+	font-size: 625%;
+}
+
+body {
+	font-size: .24rem;
+}
+ul{
+	list-style:none;
+}
+
+.lottery {
+	width: 4.16rem;
+	height: 4.16rem;
+	position: relative;
+	border: #f00 solid .04rem;
+	margin: 1rem auto;
+	background:#f00;
+}
+.lot h3 {
+	width: 2.04rem;
+	height: 2.04rem;
+	border: #f00 solid .02rem;
+	line-height:2rem;
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:99;
+	font-size:.24rem;
+	text-align: center;
+	background:#fff;
+}
+
+.lottery_prize ul li{
+	width:1rem;
+	height:1rem;
+	border: #f00 solid .02rem;
+	background:#fff;
+	/*float:left;*/
+}
+.lottery_prize ul li img{
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+.lottery_prize ul li .lottery_pitch{
+	width:100%;
+	height:100%;
+	position:absolute;
+	display:inline-block;
+	background:rgba(0,0,0,0.5);
+	display:none;
+}
+.lottery_prize ul li.active .lottery_pitch{
+	display:block;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生成随机数</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//生成1至任意数的随机数，max为最大值
+	var max=12;
+	var min=5;
+	parseInt(Math.random()*max,10)+1;
+	Math.floor(Math.random()*max)+1;
+	console.log(Math.ceil(Math.random()*max));
+	
+	//生成0至任意数的随机数，max为最大值
+	parseInt(Math.random()*(max+1),10);
+	console.log(Math.floor(Math.random()*(max+1)));
+	
+	//生成任意值到任意值的随机数，max为最大值，min为最小值
+	parseInt(Math.random()*(max-min+1)+min,10);
+	console.log(Math.floor(Math.random()*(max-min+1)+min));
+</script>
